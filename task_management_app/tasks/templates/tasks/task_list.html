@@ -116,6 +116,11 @@
             {% endif %}
         </div>
 
+        <!-- New Row for Task Description -->
+        <div style="color: #666; font-size: 0.9em;">
+            {{ task.description|truncatechars:25 }}
+        </div>
+
         <!-- Row 3: Created Date -->
         <div style="display: flex; justify-content: flex-end;">
             <span>{{ task.created|date:"d:m:Y" }}</span>
