@@ -30,7 +30,12 @@
 </div>
 
 
-
+<div class="category-tabs">
+    <a href="?category=all" class="{% if not request.GET.category or request.GET.category == 'all' %}active{% endif %}">All</a>
+    {% for choice in tasks.model.category_choices %}
+        <a href="?category={{ choice.0 }}" class="{% if request.GET.category == choice.0 %}active{% endif %}">{{ choice.1 }}</a>
+    {% endfor %}
+</div>
 
 
 

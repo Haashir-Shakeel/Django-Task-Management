@@ -63,9 +63,16 @@ class TaskList(LoginRequiredMixin, ListView):
         context['tasks'] = context['tasks'].filter(user=self.request.user)
         context['count'] = context['tasks'].filter(complete=False).count
 
+        category_filter = self.request.GET.get('category') or 'all'
+
         search_input = self.request.GET.get('search-area') or ''
         if search_input:
             context['tasks'] = context['tasks'].filter(title__startswith = search_input)
+
+        if category_filter != 'all':
+            context['tasks'] = context['tasks'].filter(category=category_filter)
+        
+        context['category_filter'] = category_filter
              
         context['search_input']=search_input
 
