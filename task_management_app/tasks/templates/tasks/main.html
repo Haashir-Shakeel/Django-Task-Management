@@ -8,12 +8,12 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200&display=swap" rel="stylesheet">
-
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style> 
         body{
             background-color: #FAFAFA;
             font-family: 'Nunito', sans-serif;
-            padding-top: 50px;
+            /* padding-top: 10px; */
         }
 
         h1,h2,h3,h4,h5,h6{
@@ -24,7 +24,7 @@
             color: #4b5156;
         }
         .container{
-            max-width: 550px;
+            /* max-width: 850px; */
             margin: auto;
             background-color: #fff;
             -webkit-box-shadow: 2px 2px 13px -4px rgb(0,0,0,0.21);
@@ -130,14 +130,46 @@
         .card-body{
             padding: 20px;
         }
+
+                /* Category Chip Styles */
+        .chip-dev {
+            background-color: #ffff99; /* light yellow */
+            color: #cccc00; /* dark yellow */
+        }
+
+        .chip-sal {
+            background-color: #ffcccc; /* light red */
+            color: #ff6666; /* dark red */
+        }
+
+        .chip-fin {
+            background-color: #ccffcc; /* light green */
+            color: #33cc33; /* dark green */
+        }
+
+        .chip-hr {
+            background-color: #ccffff; /* light blue */
+            color: #33cccc; /* dark blue */
+        }
+
+        .chip-ins {
+            background-color: #f2f2f2; /* light grey */
+            color: #999999; /* dark grey */
+        }
+
       
     </style>
 </head>
 <body>
-    <div class="container">
+    <div>
+        
+        
+    <!-- <div class="container"> -->
+
         {% block content %}
 
         {% endblock content %}
+    <!-- </div> -->
     </div>
 </body>
 </html>
