@@ -20,7 +20,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 
 from .models import Task
 
-
+from django.db.models import Q
 # Create your views here.
 
 class CustomLoginView(LoginView):
@@ -58,9 +58,19 @@ class TaskList(LoginRequiredMixin, ListView):
     model = Task
     context_object_name='tasks'
 
+    def get_queryset(self):
+        # Get the current logged-in user
+        user = self.request.user
+        # Filter tasks where the user is the creator or one of the assignees
+        return Task.objects.filter(
+            Q(user=user) | Q(assignee=user)
+        ).distinct()
+    
+
     def get_context_data(self, **kwargs):
         context =  super().get_context_data(**kwargs)
-        context['tasks'] = context['tasks'].filter(user=self.request.user)
+        #no need of this now as tasks are being filtered for users above
+        # context['tasks'] = context['tasks'].filter(user=self.request.user)
         context['count'] = context['tasks'].filter(complete=False).count
 
         category_filter = self.request.GET.get('category') or 'all'
