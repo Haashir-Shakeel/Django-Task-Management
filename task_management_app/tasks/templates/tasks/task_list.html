@@ -98,9 +98,9 @@
             </div>
             <div style="margin-left: auto; display: flex; align-items: center; gap: 10px;">
             {% if task.complete %}
-            <i class="fa fa-circle" style="color: grey;"></i>
+            <i class="fa fa-check-circle" style="color: green;"></i>
             {% else %}
-            <i class="fa fa-check-circle" style="color: gray;"></i>
+            <i class="fa fa-circle" style="color: red;"></i>
             {% endif %}
             <a href="{% url 'task-update' task.id %}"><i class="fa fa-pencil"></i></a>
             <a href="{% url 'task-delete' task.id %}" style="color: red;"><i class="fa fa-trash"></i></a>
@@ -127,7 +127,14 @@
         </div>
     </div>
     {% empty %}
-    <h3>No Items in the List</h3>
+    <div style="width: 100%; text-align: center; margin-top: 50px;">
+        <div>
+            <i class="fa fa-search" style="font-size: 24px; color: #83dddd;"></i>
+        </div>
+        <div>
+            <h3>No notes found</h3>
+        </div>
+    </div>
     {% endfor %}
 </div>
 
