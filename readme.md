@@ -34,6 +34,11 @@ cd Django-Task-Management
 pip install -r requirements.txt
 ```
 
+### get into project directory
+```
+cd task_management_app
+```
+
 ### db setup
 ```
 python manage.py migrate
