@@ -22,12 +22,12 @@ Before starting, ensure you have the following installed:
 ### clone the repository to your local machine:
 
 ```
-git clone <https://github.com/Haashir-Shakeel/Django-Task-Management.git>
+git clone https://github.com/Haashir-Shakeel/Django-Task-Management.git
 ```
 
 ### Navigate to the project directory:
 ```
-cd <project-directory>
+cd Django-Task-Management
 ```
 ### Install the required Python packages
 ```
