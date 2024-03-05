@@ -42,7 +42,7 @@
 
 <div class="search-add-section" style="padding: 10px; display: flex; justify-content: space-between; align-items: center;">
     <form method="GET" style="width: 100%;">
-        <input type="text" name="search-area" style="width: 80%; padding: 10px;">
+        <input type="text" name="search-area" style="width: 80%; padding: 10px;" value="{{ search_input }}" >
         <button type="submit" style="padding: 10px; margin-left: 10px;">🔍</button>
         <a href="{% url 'task-create' %}" style="padding: 10px; background-color: blue; color: white; text-decoration: none; margin-left: 10px;">➕</a>
     </form>
@@ -115,13 +115,13 @@
             <h3>{{ task.title }}</h3>
             {% endif %}
         </div>
-
-        <!-- New Row for Task Description -->
+        
+        <!-- Row 3: Task Description -->
         <div style="color: #666; font-size: 0.9em;">
             {{ task.description|truncatechars:25 }}
         </div>
 
-        <!-- Row 3: Created Date -->
+        <!-- Row 4: Created Date -->
         <div style="display: flex; justify-content: flex-end;">
             <span>{{ task.created|date:"d:m:Y" }}</span>
         </div>
